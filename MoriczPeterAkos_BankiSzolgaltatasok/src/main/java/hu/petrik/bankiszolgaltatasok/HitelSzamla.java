@@ -12,6 +12,7 @@ public class HitelSzamla extends Szamla {
     public boolean kivesz(int osszeg) {
         if (getAktualisEgyenleg() - osszeg >= -hitelkeret) {
             // Kivétel engedélyezve
+            setAktualisEgyenleg((int) (getAktualisEgyenleg() - osszeg));
             return true;
         }
         return false; // Kivétel nem engedélyezve

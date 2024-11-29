@@ -5,9 +5,9 @@ public class Main {
         Tulajdonos tulajdonos = new Tulajdonos("John Doe");
         Bank bank = new Bank();
 
-        Szamla szamla1 = bank.szamlaNyitas(tulajdonos, 1000.0);
-        Szamla szamla2 = bank.szamlaNyitas(tulajdonos, 0.0);
-        Szamla szamla3 = bank.szamlaNyitas(tulajdonos, 6000.0);
+        Szamla szamla1 = bank.szamlaNyitas(tulajdonos, 100000.0);
+        Szamla szamla2 = bank.szamlaNyitas(tulajdonos, 600000.0);
+        Szamla szamla3 = bank.szamlaNyitas(tulajdonos, 600000.0);
 
         szamla1.befizet(1000);
         szamla2.befizet(500);

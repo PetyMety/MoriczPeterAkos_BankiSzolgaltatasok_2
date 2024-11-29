@@ -21,6 +21,7 @@ public class MegtakaritasiSzamla extends Szamla {
     @Override
     public boolean kivesz(int osszeg) {
         if (getAktualisEgyenleg() - osszeg >= 0) {
+            setAktualisEgyenleg((int) (getAktualisEgyenleg()-osszeg));
             // Kivétel engedélyezve
             return true;
         }
@@ -28,7 +29,7 @@ public class MegtakaritasiSzamla extends Szamla {
     }
 
     public void kamatJovairas() {
-        int ujEgyenleg = (int) (getAktualisEgyenleg() * kamat);
+        int ujEgyenleg = (int) (getAktualisEgyenleg() * (kamat - 1));
         befizet(ujEgyenleg);
     }
 }

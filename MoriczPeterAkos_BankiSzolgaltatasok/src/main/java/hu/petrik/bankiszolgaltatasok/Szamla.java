@@ -1,6 +1,6 @@
 package hu.petrik.bankiszolgaltatasok;
 
-public class Szamla extends BankiSzolgaltatas {
+public abstract class Szamla extends BankiSzolgaltatas {
     public int aktualisEgyenleg;
 
     public Szamla(Tulajdonos tulajdonos) {
@@ -12,12 +12,19 @@ public class Szamla extends BankiSzolgaltatas {
         return aktualisEgyenleg;
     }
 
+    public void setAktualisEgyenleg(int aktualisEgyenleg) {
+        this.aktualisEgyenleg = aktualisEgyenleg;
+    }
+
     public void befizet(int osszeg) {
-        this.aktualisEgyenleg += osszeg;
+        aktualisEgyenleg += osszeg;
     }
 
     public boolean kivesz(int osszeg) {
-        // Nem implementált metódus
+        if (aktualisEgyenleg >= osszeg) {
+            aktualisEgyenleg -= osszeg;
+            return true;
+        }
         return false;
     }
 

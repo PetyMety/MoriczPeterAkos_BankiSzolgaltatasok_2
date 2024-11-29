@@ -13,7 +13,7 @@ Bank {
 
     public Szamla szamlaNyitas(Tulajdonos tulajdonos, double hitelkeret) {
         if (hitelkeret < 0) {
-            throw new RuntimeException("Negatív hitelkeret nem érvényes");
+            throw new IllegalArgumentException("Negatív hitelkeret nem érvényes");
         }
         Szamla szamla;
         if (hitelkeret > 0) {
